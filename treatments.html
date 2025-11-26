@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatments | Hospital Tourism India</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">🏥 Hospital Tourism India</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="treatments.html">Treatments</a></li>
+                <li><a href="hospitals.html">Hospitals</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login" onclick="openModal('loginModal')">Login</button>
+                <button class="btn-signup" onclick="openModal('signupModal')">Sign Up</button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container">
+        <h2>Treatment Packages</h2>
+        <p style="text-align: center; color: #626c71; margin-bottom: 24px; font-size: 16px;">
+            Comprehensive medical treatment packages with world-class facilities
+        </p>
+        
+        <div class="grid">
+            <div class="card">
+                <span class="badge">Most Popular</span>
+                <h3>Knee Replacement</h3>
+                <p class="card-price">$9,500 - $12,000</p>
+                <ul class="features-list">
+                    <li>Orthopedic consultation & imaging</li>
+                    <li>Advanced joint replacement surgery</li>
+                    <li>5-day private accommodation</li>
+                    <li>Physiotherapy (10 sessions)</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">Popular</span>
+                <h3>Cardiac Bypass Surgery</h3>
+                <p class="card-price">$14,000 - $18,000</p>
+                <ul class="features-list">
+                    <li>Complete cardiac assessment</li>
+                    <li>CABG/Angioplasty by experts</li>
+                    <li>7-day ICU + 3-day ward</li>
+                    <li>3 months post-operative follow-up</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">New</span>
+                <h3>IVF Treatment</h3>
+                <p class="card-price">$6,500 - $8,500</p>
+                <ul class="features-list">
+                    <li>Complete fertility workup</li>
+                    <li>IVF cycle with medications</li>
+                    <li>Embryo transfer & monitoring</li>
+                    <li>Nutritionist & counseling</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">Advanced</span>
+                <h3>Orthopedic Surgery</h3>
+                <p class="card-price">$8,000 - $11,000</p>
+                <ul class="features-list">
+                    <li>Sports injury & trauma care</li>
+                    <li>Arthroscopic & open procedures</li>
+                    <li>4-day accommodation</li>
+                    <li>Physical therapy & rehab</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">Specialized</span>
+                <h3>Cancer Treatment</h3>
+                <p class="card-price">$12,000 - $25,000</p>
+                <ul class="features-list">
+                    <li>Comprehensive diagnostics</li>
+                    <li>Surgery/Chemo/Radiation</li>
+                    <li>10-14 days accommodation</li>
+                    <li>6 months follow-up care</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">Premium</span>
+                <h3>Hair Transplant</h3>
+                <p class="card-price">$3,500 - $6,000</p>
+                <ul class="features-list">
+                    <li>FUE/FUT hair transplant</li>
+                    <li>3-day accommodation</li>
+                    <li>Post-op care & medications</li>
+                    <li>6-month follow-up</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="enquiryModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('enquiryModal')">&times;</button>
+            <h2>Get Free Estimate</h2>
+            <form onsubmit="handleEnquiry(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Treatment Type</label>
+                    <select required>
+                        <option value="">Select Treatment</option>
+                        <option value="knee">Knee Replacement</option>
+                        <option value="cardiac">Cardiac Bypass</option>
+                        <option value="ivf">IVF Treatment</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Submit Enquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Hospital Tourism India</h4>
+                <p style="font-size: 14px; line-height: 1.6;">Connecting international patients with world-class healthcare at affordable costs.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">🏠 Home</a></li>
+                    <li><a href="treatments.html">💊 Treatments</a></li>
+                    <li><a href="hospitals.html">🏥 Hospitals</a></li>
+                    <li><a href="facilities.html">⚕️ Facilities</a></li>
+                    <li><a href="contact.html">📬 Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>📧 info@hospitaltourismindia.com</li>
+                    <li>📞 +91-9XXX-XXX-XXXX</li>
+                    <li>📍 New Delhi, India</li>
+                    <li>🕐 24/7 Support</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hospital Tourism India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+</body>
+</html>

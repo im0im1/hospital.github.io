@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hospital Tourism India - Affordable medical treatment packages">
+    <title>Hospital Tourism India | Home</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🏥 Hospital Tourism India</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/treatments.html">Treatments</a></li>
+                <li><a href="pages/hospitals.html">Hospitals</a></li>
+                <li><a href="pages/facilities.html">Facilities</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login" onclick="openModal('loginModal')">Login</button>
+                <button class="btn-signup" onclick="openModal('signupModal')">Sign Up</button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('loginModal')">&times;</button>
+            <h2>Login</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('signupModal')">&times;</button>
+            <h2>Create Account</h2>
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required placeholder="Min 6 characters">
+                </div>
+                <div class="form-group">
+                    <label>User Type</label>
+                    <select required>
+                        <option value="">Select Type</option>
+                        <option value="patient">Patient</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enquiry Modal -->
+    <div id="enquiryModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('enquiryModal')">&times;</button>
+            <h2>Get Free Estimate</h2>
+            <form onsubmit="handleEnquiry(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Treatment Type</label>
+                    <select required>
+                        <option value="">Select Treatment</option>
+                        <option value="knee">Knee Replacement</option>
+                        <option value="cardiac">Cardiac Bypass</option>
+                        <option value="ivf">IVF Treatment</option>
+                        <option value="ortho">Orthopedic Surgery</option>
+                        <option value="cancer">Cancer Treatment</option>
+                        <option value="hair">Hair Transplant</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Submit Enquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>World-Class Medical Treatment in India</h1>
+            <p>Affordable, high-quality healthcare for international patients with latest technology and experienced doctors</p>
+            <div class="cta-buttons">
+                <a href="pages/treatments.html" class="btn-primary">Explore Packages</a>
+                <button class="btn-secondary" onclick="openModal('enquiryModal')">Get Free Estimate</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Hospitals -->
+    <section class="container">
+        <h2>Featured Partner Hospitals</h2>
+        <p style="text-align: center; color: #626c71; margin-bottom: 24px; font-size: 16px;">
+            India's leading JCI/NABH accredited healthcare providers
+        </p>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+            <div class="card">
+                <h3>🏥 Medanta – The Medicity</h3>
+                <p><strong>Gurugram, Delhi NCR</strong></p>
+                <p style="color: #218594; font-weight: 600; margin: 12px 0;">Cardiology • Oncology • Robotic Surgery</p>
+                <p>1,600+ beds with India's first intra-operative MRI Brain Suite. Advanced minimally invasive procedures.</p>
+                <p class="badge" style="background: #fef3c7; color: #b45309; display: block; width: fit-content; margin-top: 16px;">JCI & NABH Accredited</p>
+            </div>
+            <div class="card">
+                <h3>🏥 Apollo Hospitals, Delhi</h3>
+                <p><strong>New Delhi</strong></p>
+                <p style="color: #218594; font-weight: 600; margin: 12px 0;">Cardiology • Oncology • Organ Transplants</p>
+                <p>70+ hospitals across India. 20,000+ international patients annually with dedicated multilingual support.</p>
+                <p class="badge" style="background: #fef3c7; color: #b45309; display: block; width: fit-content; margin-top: 16px;">JCI Accredited</p>
+            </div>
+            <div class="card">
+                <h3>🏥 Fortis Escorts Heart Institute</h3>
+                <p><strong>Delhi, Mumbai, Bangalore</strong></p>
+                <p style="color: #218594; font-weight: 600; margin: 12px 0;">Cardiology • Heart Surgery • Organ Transplants</p>
+                <p>Treated 200,000+ international patients from 175+ countries with 90%+ success rates.</p>
+                <p class="badge" style="background: #fef3c7; color: #b45309; display: block; width: fit-content; margin-top: 16px;">JCI & NABH Accredited</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 24px;">
+            <a href="pages/hospitals.html" style="background: #218594; color: white; border: none; padding: 12px 24px; text-decoration: none; display: inline-block; border-radius: 8px;">View All Hospitals →</a>
+        </div>
+    </section>
+
+    <!-- Why Choose -->
+    <section class="container">
+        <h2>Why Choose Hospital Tourism India?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>💰 Cost Effective</h3>
+                <p>Treatment costs 70-80% lower than developed countries without compromising quality</p>
+            </div>
+            <div class="card">
+                <h3>👨‍⚕️ Expert Doctors</h3>
+                <p>International trained specialists with 10+ years experience</p>
+            </div>
+            <div class="card">
+                <h3>🏥 Modern Facilities</h3>
+                <p>JCI accredited hospitals with state-of-the-art technology</p>
+            </div>
+            <div class="card">
+                <h3>✈️ Complete Support</h3>
+                <p>Visa letters, airport pickup, translators, accommodation included</p>
+            </div>
+            <div class="card">
+                <h3>🌍 International Standards</h3>
+                <p>NABH & ISO certified with world-class infection control</p>
+            </div>
+            <div class="card">
+                <h3>📱 Easy Communication</h3>
+                <p>24/7 multilingual support team for consultations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Treatments -->
+    <section class="container">
+        <h2>Popular Treatment Packages</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">Most Popular</span>
+                <h3>Knee Replacement</h3>
+                <p class="card-price">$9,500 - $12,000</p>
+                <ul class="features-list">
+                    <li>Orthopedic consultation & imaging</li>
+                    <li>Advanced joint replacement surgery</li>
+                    <li>5-day private room accommodation</li>
+                    <li>Physiotherapy (10 sessions)</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+            <div class="card">
+                <span class="badge">Popular</span>
+                <h3>Cardiac Bypass Surgery</h3>
+                <p class="card-price">$14,000 - $18,000</p>
+                <ul class="features-list">
+                    <li>Complete cardiac assessment</li>
+                    <li>CABG/Angioplasty by experts</li>
+                    <li>7-day ICU + 3-day ward stay</li>
+                    <li>3 months post-operative follow-up</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+            <div class="card">
+                <span class="badge">New</span>
+                <h3>IVF Treatment</h3>
+                <p class="card-price">$6,500 - $8,500</p>
+                <ul class="features-list">
+                    <li>Complete fertility workup & tests</li>
+                    <li>IVF cycle with medications</li>
+                    <li>Embryo transfer & monitoring</li>
+                    <li>Nutritionist & counseling support</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+            <div class="card">
+                <span class="badge">Advanced</span>
+                <h3>Orthopedic Surgery</h3>
+                <p class="card-price">$8,000 - $11,000</p>
+                <ul class="features-list">
+                    <li>Sports injury & trauma care</li>
+                    <li>Arthroscopic & open procedures</li>
+                    <li>4-day hospital accommodation</li>
+                    <li>Physical therapy & rehab</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+            <div class="card">
+                <span class="badge">Specialized</span>
+                <h3>Cancer Treatment</h3>
+                <p class="card-price">$12,000 - $25,000</p>
+                <ul class="features-list">
+                    <li>Comprehensive cancer diagnostics</li>
+                    <li>Surgery/Chemotherapy/Radiation</li>
+                    <li>10-14 days accommodation</li>
+                    <li>6 months follow-up care</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+            <div class="card">
+                <span class="badge">Premium</span>
+                <h3>Hair Transplant</h3>
+                <p class="card-price">$3,500 - $6,000</p>
+                <ul class="features-list">
+                    <li>FUE/FUT hair transplant</li>
+                    <li>3-day accommodation</li>
+                    <li>Post-op care & medications</li>
+                    <li>6-month follow-up support</li>
+                </ul>
+                <button class="btn-primary" onclick="openModal('enquiryModal')" style="width: 100%;">Get Details</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Hospital Tourism India</h4>
+                <div style="margin-bottom: 16px;">
+                    <h5 style="color: #218594; font-size: 14px; margin-bottom: 8px;">✨ Who We Are</h5>
+                    <p style="font-size: 14px; line-height: 1.6;">We connect international patients with India's premier JCI-accredited hospitals.</p>
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <h5 style="color: #218594; font-size: 14px; margin-bottom: 8px;">🎯 Our Mission</h5>
+                    <p style="font-size: 14px; line-height: 1.6;">Make world-class medical treatment accessible at affordable costs.</p>
+                </div>
+                <div>
+                    <h5 style="color: #218594; font-size: 14px; margin-bottom: 8px;">💡 What We Offer</h5>
+                    <p style="font-size: 14px; line-height: 1.6;">Complete care packages with visa assistance, airport transfers, accommodation.</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="pages/treatments.html">💊 Treatments</a></li>
+                    <li><a href="pages/hospitals.html">🏥 Hospitals</a></li>
+                    <li><a href="pages/facilities.html">⚕️ Facilities</a></li>
+                    <li><a href="pages/contact.html">📬 Contact</a></li>
+                    <li><a href="#">📋 Privacy Policy</a></li>
+                    <li><a href="#">⚖️ Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact & Support</h4>
+                <ul>
+                    <li><strong>📧 Email</strong></li>
+                    <li>info@hospitaltourismindia.com</li>
+                    <li style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px; margin-top: 8px;"><strong>📞 Phone</strong></li>
+                    <li>+91-9XXX-XXX-XXXX</li>
+                    <li style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px; margin-top: 8px;"><strong>📍 Address</strong></li>
+                    <li>New Delhi, India</li>
+                    <li style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px; margin-top: 8px;"><strong>🕐 Hours</strong></li>
+                    <li>24/7 Support Available</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hospital Tourism India. All rights reserved. | Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

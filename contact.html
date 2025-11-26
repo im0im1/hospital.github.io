@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Hospital Tourism India</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">🏥 Hospital Tourism India</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="treatments.html">Treatments</a></li>
+                <li><a href="hospitals.html">Hospitals</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login" onclick="openModal('loginModal')">Login</button>
+                <button class="btn-signup" onclick="openModal('signupModal')">Sign Up</button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container">
+        <h2>Contact Us</h2>
+        <p style="text-align: center; color: #626c71; margin-bottom: 40px; font-size: 16px;">
+            Have questions? We're here to help! Fill out the form below and our team will respond within 24 hours.
+        </p>
+        <div class="grid">
+            <div style="grid-column: 1/-1;">
+                <form onsubmit="handleContact(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" required placeholder="Your country">
+                    </div>
+                    <div class="form-group">
+                        <label>Treatment Type</label>
+                        <input type="text" required placeholder="e.g., Knee Replacement">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea required placeholder="Your message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Hospital Tourism India</h4>
+                <p style="font-size: 14px; line-height: 1.6;">Connecting international patients with world-class healthcare at affordable costs.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">🏠 Home</a></li>
+                    <li><a href="treatments.html">💊 Treatments</a></li>
+                    <li><a href="hospitals.html">🏥 Hospitals</a></li>
+                    <li><a href="facilities.html">⚕️ Facilities</a></li>
+                    <li><a href="contact.html">📬 Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>📧 info@hospitaltourismindia.com</li>
+                    <li>📞 +91-9XXX-XXX-XXXX</li>
+                    <li>📍 New Delhi, India</li>
+                    <li>🕐 24/7 Support</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hospital Tourism India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+</body>
+</html>
